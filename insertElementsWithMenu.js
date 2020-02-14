@@ -25,7 +25,7 @@ Draw.loadPlugin(function(ui) {
            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
 
-        xmlhttp.open("GET", "text.xml", false);
+        xmlhttp.open("GET", "sub2.xml", false);
         xmlhttp.send();
         xmlDoc = xmlhttp.responseXML;
         let doc = xmlDoc;
