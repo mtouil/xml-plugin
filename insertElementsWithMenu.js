@@ -24,11 +24,29 @@ Draw.loadPlugin(function(ui) {
         } else {
            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
+        //importClass(packages.com.mxGraph1.XMLtoJava);
 
+        XMLtoJava.testMapper();
         xmlhttp.open("GET", "sub2.xml", false);
         xmlhttp.send();
         xmlDoc = xmlhttp.responseXML;
         let doc = xmlDoc;
+
+        xmlhttp.open("GET", "subnet.json", false);
+        xmlhttp.send();
+        var obj = JSON.parse(xmlhttp.responseText);
+        let jsonDoc = JSON.parse(xmlhttp.responseText);
+        for (const property in obj) {
+          console.log(`${property}: ${obj[property]}`);
+        }
+
+        for (let index = 0; index < obj.length; index++) {
+          const subnet = obj[index];
+          const vpcId = sub[index][VpcId];
+          console.log(vpcId);
+        } 
+        
+        
 
     ui.editor.setGraphXml(doc.documentElement);    
         if(theGraph.isEnabled() && !theGraph.isCellLocked(theGraph.getDefaultParent())){
@@ -36,7 +54,7 @@ Draw.loadPlugin(function(ui) {
           var newElement=new mxCell("",
                     new mxGeometry(pos.x, pos.y, 80, 80),
                     "ellipse;whiteSpace=wrap;html=1;");
-        
+  
           newElement.vertex=!0;
           theGraph.setSelectionCell(theGraph.addCell(newElement))
         }
