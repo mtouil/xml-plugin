@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<mxfile>
+        
+    <diagram>
+            
+        <mxGraphModel>
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="vpc-0c1096a9259c6b447" parent="1" value="VPC" vertex="1">
+                    <mxGeometry as="geometry" height="570.0" width="730.0" x="10.0" y="20.0"/>
+                </mxCell>
+                <mxCell id="euw1-az2" parent="1" value="Availability zone" vertex="1">
+                    <mxGeometry as="geometry" height="120.0" width="480.0" x="40.0" y="30.0"/>
+                </mxCell>
+                <mxCell id="subnet-03f556205c33f644c" parent="1" value="Private subnet" vertex="1">
+                    <mxGeometry as="geometry" height="90.0" width="130.0" x="80.0" y="170.0"/>
+                </mxCell>
+                <mxCell id="euw1-az4" parent="1" value="Availability zone" vertex="1">
+                    <mxGeometry as="geometry" height="120.0" width="480.0" x="40.0" y="170.0"/>
+                </mxCell>
+                <mxCell id="subnet-03f557705c33f644c" parent="1" value="Private subnet" vertex="1">
+                    <mxGeometry as="geometry" height="90.0" width="130.0" x="80.0" y="450.0"/>
+                </mxCell>
+                <mxCell id="euw1-az1" parent="1" value="Availability zone" vertex="1">
+                    <mxGeometry as="geometry" height="120.0" width="480.0" x="40.0" y="310.0"/>
+                </mxCell>
+                <mxCell id="subnet-036c007708b41d48e" parent="1" value="Private subnet" vertex="1">
+                    <mxGeometry as="geometry" height="90.0" width="130.0" x="80.0" y="30.0"/>
+                </mxCell>
+                <mxCell id="subnet-07e1c9f12956f5b25" parent="1" value="Private subnet" vertex="1">
+                    <mxGeometry as="geometry" height="90.0" width="130.0" x="280.0" y="30.0"/>
+                </mxCell>
+                <mxCell id="subnet-0c075c784e1b16861" parent="1" value="Private subnet" vertex="1">
+                    <mxGeometry as="geometry" height="90.0" width="130.0" x="280.0" y="170.0"/>
+                </mxCell>
+                <mxCell id="euw1-az3" parent="1" value="Availability zone" vertex="1">
+                    <mxGeometry as="geometry" height="120.0" width="480.0" x="40.0" y="450.0"/>
+                </mxCell>
+                <mxCell id="subnet-07770a9bdbb398da4" parent="1" value="Private subnet" vertex="1">
+                    <mxGeometry as="geometry" height="90.0" width="130.0" x="80.0" y="310.0"/>
+                </mxCell>
+                <mxCell id="subnet-056155140be441a49" parent="1" value="Private subnet" vertex="1">
+                    <mxGeometry as="geometry" height="90.0" width="130.0" x="280.0" y="310.0"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    
+</mxfile>
