@@ -42,7 +42,7 @@ Draw.loadPlugin(function(ui) {
 
         for (let index = 0; index < obj.length; index++) {
           const subnet = obj[index];
-          const vpcId = sub[index][VpcId];
+          const vpcId = subnet[VpcId];
           console.log(vpcId);
         } 
         
