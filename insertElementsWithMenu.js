@@ -33,7 +33,7 @@ Draw.loadPlugin(function(ui) {
         }
     }, null, null, "Ctrl+Shift+Q");
     
-    ui.keyHandler.bindAction(81, !0, "myInsertEllipse", !0);
+    ui.keyHandler.bindAction(81, !0, "addJson", !0);
     
     ui.actions.addAction('myInsertText', function() {
     	
@@ -54,7 +54,7 @@ Draw.loadPlugin(function(ui) {
     // Adds menu
     ui.menubar.addMenu('My Menu', function(menu, parent) {
         ui.menus.addMenuItem(menu, 'myInsertText');
-        ui.menus.addMenuItem(menu, 'myInsertEllipse');
+        ui.menus.addMenuItem(menu, 'addJson');
     });
 
     // Reorders menubar
