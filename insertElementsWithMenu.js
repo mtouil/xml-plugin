@@ -19,7 +19,16 @@ Draw.loadPlugin(function(ui) {
     // Adds action : myInsertEllipse
     ui.actions.addAction('addJson', function() {
         var theGraph = ui.editor.graph;
-        let doc = mxUtils.parseXml("sub2.xml");
+               if (window.XMLHttpRequest) {
+           xmlhttp = new XMLHttpRequest();
+        } else {
+           xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.open("GET", "text.xml", false);
+        xmlhttp.send();
+        xmlDoc = xmlhttp.responseXML;
+        let doc = xmlDoc;
 
     ui.editor.setGraphXml(doc.documentElement);    
         if(theGraph.isEnabled() && !theGraph.isCellLocked(theGraph.getDefaultParent())){
