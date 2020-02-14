@@ -15,7 +15,7 @@ Draw.loadPlugin(function(ui) {
     // Adds resources for actions
     mxResources.parse('myInsertText=Insert text element');
     mxResources.parse('myInsertEllipse=Insert ellipse');
-    
+    mxResources.parse('addJson=addJson');
     // Adds action : myInsertEllipse
     ui.actions.addAction('addJson', function() {
         var theGraph = ui.editor.graph;
