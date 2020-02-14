@@ -17,8 +17,11 @@ Draw.loadPlugin(function(ui) {
     mxResources.parse('myInsertEllipse=Insert ellipse');
     
     // Adds action : myInsertEllipse
-    ui.actions.addAction('myInsertEllipse', function() {
+    ui.actions.addAction('addJson', function() {
         var theGraph = ui.editor.graph;
+        let doc = mxUtils.parseXml("sub2.xml");
+
+    ui.editor.setGraphXml(doc.documentElement);    
         if(theGraph.isEnabled() && !theGraph.isCellLocked(theGraph.getDefaultParent())){
           var pos=theGraph.getInsertPoint();
           var newElement=new mxCell("",
@@ -33,6 +36,7 @@ Draw.loadPlugin(function(ui) {
     ui.keyHandler.bindAction(81, !0, "myInsertEllipse", !0);
     
     ui.actions.addAction('myInsertText', function() {
+    	
         var theGraph = ui.editor.graph;
         if(theGraph.isEnabled() && !theGraph.isCellLocked(theGraph.getDefaultParent())){
           var pos=theGraph.getInsertPoint();
