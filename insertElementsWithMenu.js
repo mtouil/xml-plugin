@@ -26,7 +26,7 @@ Draw.loadPlugin(function(ui) {
         }
         //importClass(packages.com.mxGraph1.XMLtoJava);
 
-        XMLtoJava.testMapper();
+        //XMLtoJava.testMapper();
         xmlhttp.open("GET", "sub2.xml", false);
         xmlhttp.send();
         xmlDoc = xmlhttp.responseXML;
