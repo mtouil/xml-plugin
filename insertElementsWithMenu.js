@@ -121,13 +121,14 @@ Draw.loadPlugin(function(ui) {
     console.log(az.getGeometry().getY()+az.getGeometry().getHeight());
     console.log(vpc.getGeometry().getY()+vpc.getGeometry().getHeight());
     
-  }
+  
   }else {
     addCell(sub["getSubnetId"],"Private subnet",80,30+(140*(Integer.parseInt(Character.toString((azID.charAt(azID.length()-1))))-1)),mxgraph);
     subsaz.push(azID);
   }
 }
  }
+}
 
     // Adds resources for actions
     mxResources.parse('myInsertText=Insert text element');
