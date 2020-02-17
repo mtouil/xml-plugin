@@ -68,7 +68,7 @@ Draw.loadPlugin(function(ui) {
     return null;
 }
  function CellMapper(subs,mxgraph) {
-  let i =0;
+   let i =0;
    let azid = "";
    let vpcid= "";
    let a = 0;
@@ -90,7 +90,7 @@ Draw.loadPlugin(function(ui) {
   
   azID = sub["getAvailabilityZoneId"];
   
-  if(azID!=null && !azs.includes( azID)) {
+  if(azID!=null && !azs.includes(azID)) {
     addCell(azID,"Availability zone",40,30+a,mxgraph);
     azid=azID;
     console.log(azID);
@@ -107,7 +107,7 @@ Draw.loadPlugin(function(ui) {
     }
     a=a+140;
   }
-  if(subsaz.contains(azID)) {
+  if(subsaz.includes(azID)) {
     console.log(azID);
      azs.push(azID);	
   addCell(sub.getSubnetId(),"Private subnet",280,30+(140*(Integer.parseInt(Character.toString((azID.charAt(azID.length()-1))))-1)),mxgraph);
@@ -123,17 +123,20 @@ Draw.loadPlugin(function(ui) {
     
   }
   }else {
-    addCell(sub.getSubnetId(),"Private subnet",80,30+(140*(Integer.parseInt(Character.toString((azID.charAt(azID.length()-1))))-1)),mxgraph);
+    addCell(sub["getSubnetId"],"Private subnet",80,30+(140*(Integer.parseInt(Character.toString((azID.charAt(azID.length()-1))))-1)),mxgraph);
     subsaz.push(azID);
   }
 }
+ }
 
     // Adds resources for actions
     mxResources.parse('myInsertText=Insert text element');
     mxResources.parse('myInsertEllipse=Insert ellipse');
     mxResources.parse('addJson=addJson');
+    
     // Adds action : myInsertEllipse
     ui.actions.addAction('addJson', function() {
+        
         var theGraph = ui.editor.graph;
                if (window.XMLHttpRequest) {
            xmlhttp = new XMLHttpRequest();
@@ -157,6 +160,7 @@ Draw.loadPlugin(function(ui) {
         }
        console.log(obj["Subnets"][0]["VpcId"])
         let subnets = obj["Subnets"];
+
         for (let index = 0; index < subnets.length; index++) {
           const subnet = subnets[index];
           const vpcId = subnet["VpcId"];
@@ -164,9 +168,10 @@ Draw.loadPlugin(function(ui) {
         } 
         
         
-
+    CellMapper(subnets,theGraph);  
     ui.editor.setGraphXml(doc.documentElement);    
-        if(theGraph.isEnabled() && !theGraph.isCellLocked(theGraph.getDefaultParent())){
+    
+      if(theGraph.isEnabled() && !theGraph.isCellLocked(theGraph.getDefaultParent())){
           var pos=theGraph.getInsertPoint();
           var newElement=new mxCell("",
                     new mxGeometry(pos.x, pos.y, 80, 80),
