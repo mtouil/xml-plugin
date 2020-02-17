@@ -39,7 +39,7 @@ Draw.loadPlugin(function(ui) {
         for (const property in obj) {
           console.log(`${property}: ${obj[property]}`);
         }
-       // console.log(obj["Subnets"][0]["VpcId"])
+       console.log(obj["Subnets"][0]["VpcId"])
 
         for (let index = 0; index < obj.length; index++) {
           const subnet = obj["Subnets"][index];
